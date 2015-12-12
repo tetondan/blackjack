@@ -9,15 +9,21 @@ class window.AppView extends Backbone.View
   events:
     'click .hit-button': -> @model.get('playerHand').hit()
     'click .stand-button': -> @model.get('playerHand').stand()
+    'click .deal': -> 
+      @model.game()
+      @render()
     
   initialize: ->
     @render()
     @model.on 'dealer', () =>
       @$('.winner').html '<p>You Lose!</p>'
+      @$('.buttons').html '<button class="deal">New Hand</button>'
     @model.on 'tie', () =>
       @$('.winner').html "<p>It's a Tie!</p>"
+      @$('.buttons').html '<button class="deal">New Hand</button>'
     @model.on 'player', () =>
       @$('.winner').html '<p>You Win!</p>'
+      @$('.buttons').html '<button class="deal">New Hand</button>'
 
 
   render: ->

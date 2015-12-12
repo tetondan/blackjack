@@ -3,6 +3,13 @@ body {
   background-size: cover;
   font-color: white;
 }
+button {
+  font-size: 15pt;
+  background-color: brown;
+  border-radius: 5px;
+
+  border-color: black;
+}
 .cardheader {
   color: white;
 }

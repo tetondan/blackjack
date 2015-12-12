@@ -3,6 +3,12 @@
 class window.App extends Backbone.Model
   initialize: ->
     @set 'deck', deck = new Deck()
+    @game();
+
+  game: -> 
+    deck = @get 'deck' 
+    if deck.length < 10 
+      @set 'deck', deck = new Deck()
     @set 'playerHand', deck.dealPlayer()
     @set 'dealerHand', deck.dealDealer()
     listener = @get 'playerHand'
@@ -12,7 +18,7 @@ class window.App extends Backbone.Model
       dhScore = dh.scores()
       ph = @get 'playerHand'
       phScore = ph.scores()
-      while dhScore <= 17 && dhScore != 0 && phScore != 0
+      while dhScore <= 17 && dhScore != 0 && dhScore <= phScore
         dh.hit()
         dhScore = dh.scores()
       phScore = ph.scores()
