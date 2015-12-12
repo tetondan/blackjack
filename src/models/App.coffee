@@ -17,8 +17,8 @@ class window.App extends Backbone.Model
         dhScore = dh.scores()
       phScore = ph.scores()
       if dhScore > phScore
-        alert('Dealer Wins')
+        @trigger "dealer"
       else if dhScore == phScore
-        alert("It's a tie")
+        @trigger 'tie'
       else
-        alert("Player wins") 
+        @trigger 'player' 

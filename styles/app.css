@@ -1,16 +1,50 @@
+body {
+  background-image: url('https://mxg.cdnbf.net/mexchangeblackjack/turbo/assets/gameView/tableBackground.png');
+  background-size: cover;
+  font-color: white;
+}
+.cardheader {
+  color: white;
+}
 .card {
   float: left;
   border: solid 1px black;
-  width: 100px;
+  width: 120px;
   border-radius: 5px;
-  height: 140px;
+  height: 167px;
   margin-right: 20px;
 }
 
 .covered {
-  background-color: black;
+  content: url(card-back.png);
 }
 
 .hand {
   overflow: auto;
+}
+
+.player-hand-container {
+  position: absolute;
+  left: 40%;
+  top: 55%;
+}
+
+.dealer-hand-container {
+  position: absolute;
+  left: 40%;
+  top: 5%;
+}
+
+.buttons {
+  position: absolute;
+  left: 50%;
+  top: 90%;
+}
+
+.winner {
+  font-size: 25pt;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 40%;
 }
