@@ -44,7 +44,7 @@ button {
 
 .buttons {
   position: absolute;
-  left: 50%;
+  left: 46%;
   top: 90%;
 }
 
@@ -52,6 +52,22 @@ button {
   font-size: 25pt;
   color: white;
   position: absolute;
-  left: 50%;
+  left: 46%;
   top: 40%;
+}
+
+.wins {
+  color: white;
+  font-size: 15pt;
+  position: absolute;
+  top: 70%;
+  left: 30%;
+}
+
+.money {
+  color: white;
+  font-size: 15pt;
+  position: absolute;
+  top: 70%;
+  left: 25%;
 }

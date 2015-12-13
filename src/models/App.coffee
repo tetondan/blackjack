@@ -3,6 +3,9 @@
 class window.App extends Backbone.Model
   initialize: ->
     @set 'deck', deck = new Deck()
+    @set 'wins', 0
+    @set 'loses', 0
+    @set 'money', 100
     @game();
 
   game: -> 
@@ -18,7 +21,7 @@ class window.App extends Backbone.Model
       dhScore = dh.scores()
       ph = @get 'playerHand'
       phScore = ph.scores()
-      while dhScore <= 17 && dhScore != 0 && dhScore <= phScore
+      while dhScore < 17 && dhScore != 0 && dhScore <= phScore
         dh.hit()
         dhScore = dh.scores()
       phScore = ph.scores()
